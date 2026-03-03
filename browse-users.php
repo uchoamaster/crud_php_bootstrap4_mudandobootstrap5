@@ -9,8 +9,8 @@
 	
 	<!--<link rel="shortcut icon" href="https://demo.learncodeweb.com/favicon.ico"> esse e o icon --->
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -23,15 +23,15 @@
 	<div class="bg-light border-bottom shadow-sm sticky-top">
 		<div class="container">
 			<header class="blog-header py-1">
-			<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand text-muted p-0 m-0" href="#"></a> <!--caso queira adiciona imagem so muda campo acima--->					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand text-muted p-0 m-0" href="#"></a> <!--caso queira adiciona imagem so muda campo acima--->					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						
-						<form method="get" action="#" class="form-inline my-2 my-lg-0">
+						<form method="get" action="#" class="d-flex my-2 my-lg-0">
 							<!--link desse crud https://learncodeweb.com-->
 							<div class="input-group input-group-md">
 								<!---<input type="text" class="form-control search-width" name="s" id="search" value="" placeholder="pesquisa barra menu de navegaçao..." aria-label="Search">--->
-								<div class="input-group-append">
-									<!----<button type="submit" class="btn btn-primary" id="searchBtn"><i class="fa fa-search"></i></button>--->
+								<div>
+									<!----<button type="submit" class="btn btn-primary" id="searchBtn"><i class="bi bi-search"></i></button>--->
 								</div>
 							</div>
 						</form>
@@ -68,21 +68,21 @@
    	<div class="container">
 		<h1><a href="#">PHP CRUD em Bootstrap Pesquisa </a></h1>
 		<div class="card">
-			<div class="card-header"><i class="fa fa-fw fa-globe"></i> <strong>Procurar cliente</strong> <a href="add-dadoscliente.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-plus-circle"></i> Adicionar clientes</a></div>
+			<div class="card-header"><i class="bi bi-globe"></i> <strong>Procurar cliente</strong> <a href="add-users.php" class="float-end btn btn-dark btn-sm"><i class="bi bi-plus-circle"></i> Adicionar clientes</a></div>
 			<div class="card-body">
 				<?php
 				if(isset($_REQUEST['msg']) and $_REQUEST['msg']=="rds"){
-					echo	'<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Registro excluído com sucesso!</div>';
+					echo	'<div class="alert alert-success"><i class="bi bi-hand-thumbs-up"></i> Registro excluído com sucesso!</div>';
 				}elseif(isset($_REQUEST['msg']) and $_REQUEST['msg']=="rus"){
-					echo	'<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Registro atualizado com sucesso!</div>';
+					echo	'<div class="alert alert-success"><i class="bi bi-hand-thumbs-up"></i> Registro atualizado com sucesso!</div>';
 				}elseif(isset($_REQUEST['msg']) and $_REQUEST['msg']=="rnu"){
-					echo	'<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> Você não fez nenhuma alteração!</div>';
+					echo	'<div class="alert alert-warning"><i class="bi bi-exclamation-triangle"></i> Você não fez nenhuma alteração!</div>';
 				}elseif(isset($_REQUEST['msg']) and $_REQUEST['msg']=="rna"){
-					echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Há alguma coisa errada.<strong>Por favor, tente de novo!</strong></div>';
+					echo	'<div class="alert alert-danger"><i class="bi bi-exclamation-triangle"></i> Há alguma coisa errada.<strong>Por favor, tente de novo!</strong></div>';
 				}
 				?>
 				<div class="col-sm-12">
-					<h5 class="card-title"><i class="fa fa-fw fa-search"></i> Encontrar cliente</h5>
+					<h5 class="card-title"><i class="bi bi-search"></i> Encontrar cliente</h5>
 					<form method="get">
 						<div class="row">
 							<div class="col-sm-2">
@@ -110,9 +110,9 @@
 									<label>    Data 	</label>
 									<div class="input-group">
 										<input type="text" class="fromDate form-control hasDatepicker" name="df" id="df" value="" placeholder="a partir de">
-										<div class="input-group-prepend"><span class="input-group-text">-</span></div>
+										<span class="input-group-text">-</span>
 										<input type="text" class="toDate form-control hasDatepicker" name="dt" id="dt" value="" placeholder="até a data">
-										<div class="input-group-append"><span class="input-group-text"><a href="javascript:;" onclick="$('#df,#dt').val('');"><i class="fa fa-fw fa-sync"></i></a></span></div>
+										<span class="input-group-text"><a href="javascript:;" onclick="$('#df,#dt').val('');"><i class="bi bi-arrow-clockwise"></i></a></span>
 									</div>
 
 								</div>
@@ -122,8 +122,8 @@
 								<div class="form-group">
 									<label>&nbsp;</label>
 									<div>
-										<button type="submit" name="submit" value="search" id="submit" class="btn btn-primary"><i class="fa fa-fw fa-search"></i> Pesquisar</button>
-										<a href="<?php echo $_SERVER['PHP_SELF'];?>" class="btn btn-danger"><i class="fa fa-fw fa-sync"></i> Limpar</a>
+										<button type="submit" name="submit" value="search" id="submit" class="btn btn-primary"><i class="bi bi-search"></i> Pesquisar</button>
+										<a href="<?php echo $_SERVER['PHP_SELF'];?>" class="btn btn-danger"><i class="bi bi-arrow-clockwise"></i> Limpar</a>
 									</div>
 								</div>
 							</div>
@@ -162,8 +162,8 @@
 						<td><?php echo $val['telefone'];?></td>
 						<td align="center"><?php echo date('Y-m-d',strtotime($val['dt']));?></td>
 						<td align="center">
-							<a href="edit-dadoscliente.php?editId=<?php echo $val['id'];?>" class="text-primary"><i class="fa fa-fw fa-edit"></i> Editar</a> | <!---botao de editar-->
-							<a href="delete.php?delId=<?php echo $val['id'];?>" class="text-danger" onClick="return confirm('Are you sure to delete this user?');"><i class="fa fa-fw fa-trash"></i> Delete</a>
+							<a href="edit-users.php?editId=<?php echo $val['id'];?>" class="text-primary"><i class="bi bi-pencil-square"></i> Editar</a> | <!---botao de editar-->
+							<a href="delete.php?delId=<?php echo $val['id'];?>" class="text-danger" onClick="return confirm('Are you sure to delete this user?');"><i class="bi bi-trash"></i> Delete</a>
 						</td>
 
 					</tr>
@@ -181,9 +181,7 @@
 	
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/jquery.caret/0.1/jquery.caret.js"></script>
 	<script src="https://www.solodev.com/_/assets/phone/jquery.mobilePhoneNumber.js"></script>
 	<script
